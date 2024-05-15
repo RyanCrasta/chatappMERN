@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Chats from "./components/Chats";
+import ChatProvider from "./context/ChatProvider";
 
 const { Button } = chakraTheme.components;
 
@@ -22,11 +23,11 @@ const theme = extendBaseTheme({
 
 const Root = () => {
   return (
-    <React.StrictMode>
+    <ChatProvider>
       <ChakraProvider>
         <Outlet />
       </ChakraProvider>
-    </React.StrictMode>
+    </ChatProvider>
   );
 };
 
