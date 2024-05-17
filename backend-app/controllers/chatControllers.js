@@ -30,13 +30,10 @@ const accessChat = asyncHandler(async (req, res) => {
 
   console.log("isChat one", isChat);
 
-  isChat = await Users.populate(
-    {},
-    {
-      path: "latestMessage.sender",
-      select: "name picture email",
-    }
-  );
+  isChat = await Users.populate(isChat, {
+    path: "latestMessage.sender",
+    select: "name picture email",
+  });
 
   console.log("isChat two", JSON.stringify(isChat));
 

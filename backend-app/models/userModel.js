@@ -33,7 +33,6 @@ userSchema.methods.isPasswordMatching = async function (enteredPassword) {
 
 // before saving do this
 userSchema.pre("save", async function (next) {
-  console.log("AAAAAAAAAAA", this);
   console.log("modified", this.isModified("password"));
   if (!this.isModified("password")) {
     next();
