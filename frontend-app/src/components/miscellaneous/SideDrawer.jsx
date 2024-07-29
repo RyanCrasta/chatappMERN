@@ -82,7 +82,7 @@ const SideDrawer = () => {
     }
   };
 
-  const accessChat = async (toUserId) => {
+  const accessChat = async (toUser) => {
     try {
       const config = {
         headers: {
@@ -96,7 +96,7 @@ const SideDrawer = () => {
       const { data } = await axios.post(
         `/api/chat`,
         {
-          toUserId,
+          toUserId: toUser._id,
         },
         config
       );
@@ -197,7 +197,7 @@ const SideDrawer = () => {
                   <UserListItem
                     key={user._id}
                     user={user}
-                    handleFunction={() => accessChat(user._id)}
+                    handleFunction={() => accessChat(user)}
                   />
                 );
               })

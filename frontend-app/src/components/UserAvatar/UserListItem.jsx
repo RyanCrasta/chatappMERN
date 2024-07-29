@@ -18,7 +18,7 @@ const UserListItem = ({ user, handleFunction }) => {
       py={2}
       mb={2}
       borderRadius="lg"
-      onClick={() => handleFunction(user._id)}
+      onClick={() => handleFunction(user)}
     >
       <Avatar
         mr="2"

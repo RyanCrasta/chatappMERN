@@ -21,7 +21,7 @@ router.route("/group").post(protect, createGroupChat);
 router.route("/rename").put(protect, renameGroup);
 
 // remove someone from group
-router.route("/groupdremove").put(protect, removeFromGroup);
+router.route("/groupremove").put(protect, removeFromGroup);
 
 // add someone to group
 router.route("/groupadd").put(protect, addToGroup);

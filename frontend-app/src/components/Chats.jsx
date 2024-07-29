@@ -9,6 +9,8 @@ import ChatBox from "./ChatBox";
 const Chats = () => {
   const { user } = ChatState();
 
+  const [fetchAgain, setFetchAgain] = useState(false);
+
   console.log("hello user", user);
 
   return (
@@ -22,9 +24,11 @@ const Chats = () => {
         h="91.5vh"
         p="10px"
       >
-        {user && <MyChats />}
+        {user && <MyChats fetchAgain={fetchAgain} />}
 
-        {user && <ChatBox />}
+        {user && (
+          <ChatBox fetchAgain={fetchAgain} setFetchAgain={setFetchAgain} />
+        )}
       </Box>
     </div>
   );
